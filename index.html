@@ -2291,7 +2291,7 @@
     const normO = o => { const c = cust(o.cid); return { id: o.id, t: o.t, name: c.name, phone: c.phone, addr: o.addr, pay: o.pay, paid: o.paid, status: o.status, courier: o.courier, track: o.track, items: o.items.map(x => { const p = g(x.pid); return { n: p.name, o: p.vars.length > 1 ? vname(p, x.vi) : '', q: x.qty, p: price(p) } }), sub: o.sub, disc: o.disc, code: o.code, dlabel: o.dlabel || (o.code && PROMO.find(x => x.code === o.code) ? o.code + ' · ' + pdesc(PROMO.find(x => x.code === o.code)) : o.code), fee: o.fee, area: o.district === 'Dhaka' ? 'Inside Dhaka' : 'Outside Dhaka', total: o.total } };
     function invTab() {
       const c = INVC, f = (k, l, t = 'text') => `<div class="f"><label>${l}</label><input class="in" type="${t}" data-ic="${k}" value="${esc(c[k])}"></div>`,
-      s = (k, l, sub) => `<div class="li"><div class="g"><b>${l}</b>${sub ? `<span>${sub}</span>` : ''}</div><span class="sw ${c[k] ? 'on' : ''}" data-iact="tog" data-k="${k}"></span></div>`;
+        s = (k, l, sub) => `<div class="li"><div class="g"><b>${l}</b>${sub ? `<span>${sub}</span>` : ''}</div><span class="sw ${c[k] ? 'on' : ''}" data-iact="tog" data-k="${k}"></span></div>`;
       setTimeout(invPrev, 0);
       return `<div class="grid g2"><div style="display:flex;flex-direction:column;gap:14px;min-width:0">
  ${s('on', 'Invoice download', 'Customers can download a PDF invoice after placing an order')}
